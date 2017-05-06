@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.android.popularmovies.data.MovieContract;
 import com.example.android.popularmovies.details.MovieDetailActivity;
@@ -169,9 +170,10 @@ public class MovieListActivity extends AppCompatActivity implements LoaderManage
 
     private void updateEmptyState() {
         if (mAdapter.getItemCount() == 0) {
-            findViewById(R.id.empty_state_container).setVisibility(View.VISIBLE);
+            Toast.makeText(MovieListActivity.this, "network issue", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     public static class RetainedFragment extends Fragment implements FetchMoviesTask.Listener {
 
